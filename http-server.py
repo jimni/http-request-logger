@@ -23,6 +23,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         print("<----- Request End -----\n")
         
         self.send_response(200)
+        self.end_headers()
+        self.wfile.write("OK")
 
     do_GET = do_POST
     do_PUT = do_POST
